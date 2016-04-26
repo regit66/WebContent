@@ -159,8 +159,8 @@ div#kalendarz table
 }
 div#kalendarz table td {
 	background: url("../img/tdbg.png") repeat-x;
-	width:28px;
-	height:28px;
+	width:20px;
+	height:20px;
 	text-align:center;
 	color:#666;
 	border:1px solid #bbb;
@@ -170,7 +170,7 @@ div#kalendarz table td {
 }
 div#kalendarz table td.dni_tyg {
 	background:#f6f6f6;
-	height:14px;
+	height:12px;
 	border:none;
 }
 div#kalendarz table td.active {
@@ -179,7 +179,7 @@ div#kalendarz table td.active {
 }
 div#cal_nav {
 	background: url("../img/headbg.png") repeat-x;
-	height:34px;
+	height:30px;
 	color:white;
 	font-size:14px;
 	font-weight:bold;
@@ -226,8 +226,8 @@ div#kalendarz2 table
 }
 div#kalendarz2 table td {
 	background: url("../img/tdbg.png") repeat-x;
-	width:28px;
-	height:28px;
+	width:24px;
+	height:24px;
 	text-align:center;
 	color:#666;
 	border:1px solid #bbb;
@@ -237,7 +237,7 @@ div#kalendarz2 table td {
 }
 div#kalendarz2 table td.dni_tyg {
 	background:#f6f6f6;
-	height:14px;
+	height:12px;
 	border:none;
 }
 div#kalendarz2 table td.active {
@@ -246,7 +246,7 @@ div#kalendarz2 table td.active {
 }
 div#cal_nav2 {
 	background: url("../img/headbg.png") repeat-x;
-	height:34px;
+	height:30px;
 	color:white;
 	font-size:14px;
 	font-weight:bold;
@@ -284,9 +284,9 @@ input#cal2 {
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    position: absolute; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 80px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */

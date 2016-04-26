@@ -10,6 +10,10 @@
 
 </head>
 <body>
+
+
+
+
 	<div class="wrapper">
 		<div class="header">
 			<div class="logo">
@@ -137,7 +141,7 @@
 			<div style="clear:both"></div>			
 			
 			<div class="center-content">
-				Date Date End Title
+				
 				<%
 				String date = request.getParameter("cal"); 
 				String date2 = request.getParameter("cal2"); 
@@ -145,13 +149,13 @@
 				String tekst3 = request.getParameter("tekst3"); 
 				String tekst4 = request.getParameter("tekst4"); 
 				String tekst5 = request.getParameter("tekst5"); 
+				String Data =  "Data Start: " + date+ " Data Zakoncz: " + date2 ;
+				String Blam = "Tytul: " + tekst6 + Data + " Opis: " +tekst3 +" Miejsce: " +tekst4 +" URL: " +tekst5;
+				
 				%>
-				nazwa:	<%=tekst6%>  <br>
-				data start:	<%=date%>  <br>
-				data zakoncz:	<%=date2%>    <br>
-				opis:	<%=tekst3%>  <br>
-				miejsce :<%=tekst4%> <br>
-				url:	<%=tekst5%>  <br>
+				<%=Blam%>  <br>
+			
+		
 			</div>
 			<div class="bottom-content">
 				<div class="bottom-content-option">
@@ -176,32 +180,45 @@
     <div class="modal-body">	
     </div>
 	<form action="index.jsp" method="post" onsubmit="">
-		Event Title:
-		<input type="text" id="tekst6" value="" name="tekst6"  /><br>
-		Date:
+	<table >
+<tr>
+	<td colspan="2">Event Title:<div style="position:center;"><input type="text" id="tekst6" value="" name="tekst6"  /></div></td>
+</tr>
+<tr>
+	<td>Date Start:<div style="position:center;">
 		<input type="text" id="tekst" value="" name="cal" />
 		<input type="button" id="cal" value="" />
 		<div id="cal_all" style="display: none;">
 		<div id="cal_nav" style="width: 220px; text-align: center;"></div>
-		<div id="kalendarz"></div>
-		</div>
-		Date END:
+		<div id="kalendarz"></div></div>
+		</div></td>	<td>
+		Date END:<div style="position:center;">
 		<input type="text" id="tekst2" value="" name="cal2" />
 		<input type="button" id="cal2" />
 		<div id="cal_all2" style="display: none;">
 		<div id="cal_nav2" style="width: 220px; text-align: center;"></div>
 		<div id="kalendarz2"> </div>
 		</div>
-		<br>
-		Description:
-		<input type="text" id="tekst3" value="" name="tekst3"  /><br>
-		Location:
-		<input type="text" id="tekst4" value="" name="tekst4"  /><br>
-		URL:
-		<input type="text" id="tekst5" value="" name="tekst5"  /><br>
+		</div>
+		</td>
+</tr>
+<tr>
+
+
+
+	<td colspan="2">Description:<div style="position:center;"><input type="text" id="tekst3" value="" name="tekst3"  /></div></td>
+	<tr>
+	<td colspan="2">Location:<div style="position:center;"><input type="text" id="tekst4" value="" name="tekst4"  /></div></td>
+	<tr>
+	<td colspan="2">URL:<div style="position:center;"><input type="text" id="tekst5" value="" name="tekst5"  /></div></td>
+</table>
+	
+<br>
+			
 		<input type="submit" value="dodaj" onclick="main.jsp"/>
 		</form>	
     <div class="modal-footer">
+    <br>  <br>  <br>  <br>
     </div>
   </div>
 </div>
