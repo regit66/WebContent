@@ -186,14 +186,14 @@
 </tr>
 <tr>
 	<td>Date Start:<div style="position:center;">
-		<input type="text" id="tekst" value="" name="cal" />
+		<input type="text" id="tekst" value="" name="cal" readonly="readonly" />
 		<input type="button" id="cal" value="" />
 		<div id="cal_all" style="display: none;">
 		<div id="cal_nav" style="width: 220px; text-align: center;"></div>
 		<div id="kalendarz"></div></div>
 		</div></td>	<td>
 		Date END:<div style="position:center;">
-		<input type="text" id="tekst2" value="" name="cal2" />
+		<input type="text" id="tekst2" value="" name="cal2" readonly="readonly" />
 		<input type="button" id="cal2" />
 		<div id="cal_all2" style="display: none;">
 		<div id="cal_nav2" style="width: 220px; text-align: center;"></div>
