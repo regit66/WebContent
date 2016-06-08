@@ -1,9 +1,15 @@
 (function() {
 	var dzis = new Date(), dzis_dzien = dzis.getDate(), dzis_mc = dzis
-			.getMonth(), dzis_rok = dzis.getFullYear(), miesiace = [
-			'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec',
-			'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad',
-			'Grudzień' ], dni_tyg = [ "Nd", "Pn", "Wt", "Sr", "Cz", "Pt", "So" ], current_mc = dzis_mc, current_rok = dzis_rok;
+	.getMonth(), dzis_rok = dzis.getFullYear(), miesiace = [
+	'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec',
+	'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad',
+	'Grudzień' ], dni_tyg = [ "Nd", "Pn", "Wt", "Sr", "Cz", "Pt", "So" ], current_mc = dzis_mc, current_rok = dzis_rok;
+
+	var dzis2 = new Date(), dzis_dzien = dzis.getDate(), dzis_mc = dzis
+	.getMonth(), dzis_rok = dzis.getFullYear(), miesiace = [
+	'Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec',
+	'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad',
+	'Grudzień' ], dni_tyg = [ "Nd", "Pn", "Wt", "Sr", "Cz", "Pt", "So" ], current_mc2 = dzis_mc, current_rok2 = dzis_rok;
 
 	function pokaz_kalendarz(in_mc, in_rok, id_k, id_nast, id_poprz,
 			id_cal_nav, id_cal) {
@@ -86,19 +92,40 @@
 			}
 		}
 
+		if (id_nast == 'nast')
+			{
 		document.getElementById(id_nast).onclick = nast;
 		document.getElementById(id_poprz).onclick = poprz;
-
 	}
+		else
+			{
+			document.getElementById(id_nast).onclick = nast2;
+			document.getElementById(id_poprz).onclick = poprz2;
+			}
+	}
+	function nast2(){
+	document.getElementById('kalendarz2').innerHTML = '';
+	if (current_mc2 == 11) {
+		current_mc2 = 0;
+		current_rok2++;
+	} else {
+		current_mc2++;
+	}
+	pokaz_kalendarz(current_mc2, current_rok2, 'kalendarz2', 'nast2',
+			'poprz2', 'cal_nav2', 'cal2');
+}
+	
+	
+	
 	function nast() {
 		document.getElementById('kalendarz').innerHTML = '';
-		document.getElementById('kalendarz2').innerHTML = '';
 		if (current_mc == 11) {
 			current_mc = 0;
 			current_rok++;
 		} else {
 			current_mc++;
 		}
+	
 		// if(id_cal_nav=='cal_nav')
 		// pokaz_kalendarz(current_mc,current_rok);
 		// pokaz_kalendarz2(current_mc,current_rok);
@@ -112,11 +139,10 @@
 		// ,'cal2');
 		pokaz_kalendarz(current_mc, current_rok, 'kalendarz', 'nast', 'poprz',
 				'cal_nav', 'cal');
-		pokaz_kalendarz(current_mc, current_rok, 'kalendarz2', 'nast2',
-				'poprz2', 'cal_nav2', 'cal2');
+
 	}
 	function poprz() {
-		document.getElementById('kalendarz2').innerHTML = '';
+	
 		document.getElementById('kalendarz').innerHTML = '';
 		if (current_mc == 0) {
 			current_mc = 11;
@@ -132,7 +158,26 @@
 		// else
 		pokaz_kalendarz(current_mc, current_rok, 'kalendarz', 'nast', 'poprz',
 				'cal_nav', 'cal');
-		pokaz_kalendarz(current_mc, current_rok, 'kalendarz2', 'nast2',
+		
+	}
+	
+	function poprz2() {
+		
+		document.getElementById('kalendarz2').innerHTML = '';
+		if (current_mc2 == 0) {
+			current_mc2 = 11;
+			current_rok2--;
+		} else {
+			current_mc2--;
+		}
+		// pokaz_kalendarz(current_mc,current_rok);
+		// pokaz_kalendarz(current_mc,current_rok,id_k, id_nast, id_poprz,
+		// id_cal_nav, id_cal);
+		// if (id_cal=='cal')
+		// pokaz_kalendarz(current_mc,current_rok);
+		// else
+
+		pokaz_kalendarz(current_mc2, current_rok2, 'kalendarz2', 'nast2',
 				'poprz2', 'cal_nav2', 'cal2');
 	}
 
@@ -151,20 +196,52 @@
 			document.getElementById('cal_all2').style.display = "block";
 		}
 	}
-	function przetworz_date(d, idtekst) {
-		var month = current_mc / 1 + 1;
-		var year = current_rok;
+	function przetworz_date(d, id_tekst) {
+		if(id_tekst=='tekst')
+			{
+		month = current_mc / 1 + 1;
+		
+		 year = current_rok;
 		if (month < 10)
 			month = '0' + month;
-		var day = d;
+		 day = d;
 		if (day / 1 < 10)
 			day = '0' + day;
-		document.getElementById(idtekst).value = day + '.' + month + '.' + year;
+		document.getElementById('tekst').value = day + '.' + month + '.' + year;
 		document.getElementById('cal_all').style.display = "none";
+		
+		
+	}
+		else
+			{
+		 month2 = current_mc2 / 1 + 1;
+		 year2 = current_rok2;
+		if (month2 < 10)
+			month2 = '0' + month2;
+		 day2 = d;
+		if (day2 / 1 < 10)
+			day2 = '0' + day2;
+		document.getElementById('tekst2').value = day2 + '.' + month2 + '.' + year2;
+
 		document.getElementById('cal_all2').style.display = "none";
 
+		
 	}
-
+		if (day>day2)
+			alert( "Zła Data zakonczenie ");
+		if (day>day2 && month>month2 && year>year2)
+			alert( "Zła Data zakonczenie ");
+		if (month>month2 && day>day2 )
+			alert( "Zła Data zakonczenie ");
+		if (month>month2  )
+			alert( "Zła Data zakonczenie ");
+		if (year>year2 && day>day2)
+			alert( "Zła Data zakonczenie ");
+		if (month>month2 && year>year2)
+			alert( "Zła Data zakonczenie ");
+		if (year>year2)
+			alert( "Zła Data zakonczenie ");
+	}
 	function init(id_cal, id_k, id_nast, id_poprz, id_cal_nav, id_cal_all,
 			id_tekst) {
 
@@ -180,9 +257,11 @@
 		}
 	}
 
+
 	function start() {
 		init('cal', 'kalendarz', 'nast', 'poprz', 'cal_nav', 'cal_all', 'tekst');
 		init('cal2', 'kalendarz2', 'nast2', 'poprz2', 'cal_nav2', 'cal_all2','tekst2');
+		
 	}
 	window.onload = start;
 })();
