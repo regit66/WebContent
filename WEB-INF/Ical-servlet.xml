@@ -11,7 +11,7 @@
  
 	
 	<context:component-scan base-package="javaProject.iCal" />
- 
+ 	<context:component-scan base-package="starter" />
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"

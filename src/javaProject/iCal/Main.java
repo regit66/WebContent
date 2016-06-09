@@ -1,14 +1,24 @@
 package javaProject.iCal;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedWriter;
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URL;
+
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -40,20 +50,6 @@ public class Main {
 		// // String s=(week.printWeek());
 		// , "message", s
 		return new ModelAndView("plan");
-	}
-
-	@RequestMapping(value = "/greeting", method = RequestMethod.GET)
-	public ModelAndView helloWorld2() {
-
-		String message = eventManager.showAllEvents();
-		return new ModelAndView("greeting", "message", message);
-	}
-
-
-
-	@RequestMapping("/showForm")
-	public String showForm() {
-		return "welcome";
 	}
 
 	@RequestMapping(value = "/plan", params = "action1", method = RequestMethod.POST)
@@ -95,6 +91,6 @@ public class Main {
 		os.flush();
 		os.close();
 		is.close();
-	}
+}
 
 }
