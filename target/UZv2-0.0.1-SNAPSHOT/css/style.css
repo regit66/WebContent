@@ -1,0 +1,350 @@
+body {
+	background-color: #303030;
+	color: #ffffff;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	margin: 0 !important;
+}
+.wrapper{
+	width: 100%;
+}
+.header{
+	width: 100%;
+	padding: 40px 0;
+
+}
+.logo{
+	width: 500px;
+	font-size: 40px;
+	border: 1px solid #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	
+}
+.nav{
+	width: 100%;
+	padding: 10px 0;
+	background-color: #c34f4f;
+	text-align: center;
+	border-top: 1px solid #751b1b;
+	border-bottom: 1px solid #751b1b;
+	margin: 0 auto;
+
+}
+.content{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	border: 1px solid #ffffff;
+	height: 500px;
+	overflow: auto;
+	padding-top: 10px;
+}
+.top-content{
+	display: inline-block;
+	font-size: 20px;
+	text-align: left;
+	padding: 10px;
+}
+.top-content-option{
+	display: block;
+	float: left;
+	min-width:200px;
+}
+.center-content{
+	font-size: 20px;
+	text-align: left;
+	padding: 20px;
+}
+.top-content-option{
+	display: block;
+	min-width:200px;
+}
+.title-timezone{
+	font-size: 20px;
+	text-align: left;
+	padding: 10px;
+}
+.title-timezone-option{
+	display: block;
+	float: left;
+	min-width:220px;
+}
+
+
+
+.footer{
+	text-align: center;
+	background-color: 222222;
+	padding: 30px;
+
+}
+.resizedTextbox {
+	width: 150px;
+	height: 25px;
+	border: 0;
+}
+
+ol{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	font-size: 30px;
+	height: 40px;
+	display: inline-block;
+}
+ol a{
+	color: #ffffff;
+	text-decoration: none;
+	display: block;
+	height: 40px;
+	
+}
+ol > li{
+	float: left;
+	width: 200px;
+	height: 40px;
+	border-right: 1px dashed #751b1b;
+}
+ol > li:first-child{
+	border-left: 1px dashed #751b1b;
+}
+
+ol > li:hover
+{
+	background-color: #cf6969;
+}
+
+ol > li:hover > a
+{
+	color: #451717;
+}
+ol > li > ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	display: none;
+	font-size: 20px;
+}
+ol > li:hover > ul{
+	display: block;
+
+}
+ol > li > ul > li{
+	background-color: #cf6969;
+	position: relative;
+	z-index: 100;
+	border-top: 1px dashed #751b1b;
+
+}
+
+ol > li > ul > li:hover{
+	background-color: #c34f4f;
+	
+}
+
+ol > li > ul > li:hover > a{
+	color: #451717;
+	
+}
+
+
+div#kalendarz table
+{
+	border-collapse:collapse;
+	border:1px solid #bbb;
+}
+div#kalendarz table td {
+	background: url("../img/tdbg.png") repeat-x;
+	width:20px;
+	height:20px;
+	text-align:center;
+	color:#666;
+	border:1px solid #bbb;
+	font-weight:bold;
+	cursor:pointer;
+	padding:0;
+}
+div#kalendarz table td.dni_tyg {
+	background:#f6f6f6;
+	height:12px;
+	border:none;
+}
+div#kalendarz table td.active {
+	background: url("../img/cur.png") no-repeat;
+	color:white;
+}
+div#cal_nav {
+	background: url("../img/headbg.png") repeat-x;
+	height:30px;
+	color:white;
+	font-size:14px;
+	font-weight:bold;
+}
+div#cal_nav * a#nast {
+	background: url("../img/cur.png") no-repeat;
+	width:7px;
+	height:7px;
+	display:block;
+	float:right;
+	margin: 3px 7px 0 7px;
+}
+
+div#cal_nav * a#poprz {
+	background: url("../img/cur.png") no-repeat;
+	width:7px;
+	height:7px;
+	display:block;
+	float:left;
+	margin: 3px 7px 0 7px;
+}
+
+span.mon_year {
+	padding:10px 0 0 0;
+	display:block;
+	width:220px;
+}
+input#cal {
+	border:none;
+	width:20px;
+	height:20px;
+	background: url("../img/calendar_view_month2.png") no-repeat;
+	cursor:pointer;
+}
+
+
+
+
+
+div#kalendarz2 table
+{
+	border-collapse:collapse;
+	border:1px solid #bbb;
+}
+div#kalendarz2 table td {
+	background: url("../img/tdbg.png") repeat-x;
+	width:24px;
+	height:24px;
+	text-align:center;
+	color:#666;
+	border:1px solid #bbb;
+	font-weight:bold;
+	cursor:pointer;
+	padding:0;
+}
+div#kalendarz2 table td.dni_tyg {
+	background:#f6f6f6;
+	height:12px;
+	border:none;
+}
+div#kalendarz2 table td.active {
+	background: url("../img/cur.png") no-repeat;
+	color:white;
+}
+div#cal_nav2 {
+	background: url("../img/headbg.png") repeat-x;
+	height:30px;
+	color:white;
+	font-size:14px;
+	font-weight:bold;
+}
+div#cal_nav2 * a#nast2 {
+	background: url("../img/cur.png") no-repeat;
+	width:7px;
+	height:7px;
+	display:block;
+	float:right;
+	margin: 3px 7px 0 7px;
+}
+
+div#cal_nav2 * a#poprz2 {
+	background: url("../img/cur.png") no-repeat;
+	width:7px;
+	height:7px;
+	display:block;
+	float:left;
+	margin: 3px 7px 0 7px;
+}
+
+span.mon_year {
+	padding:10px 0 0 0;
+	display:block;
+	width:220px;
+}
+input#cal2 {
+	border:none;
+	width:20px;
+	height:20px;
+	background: url("../img/calendar_view_month2.png") no-repeat;
+	cursor:pointer;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 80px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #303030;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #ffffff;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    padding: 2px 16px;
+	font-size: 40px;
+	background-color: #c34f4f;
+	border-bottom: 1px dashed #751b1b;
+}
+.modal-body {
+padding: 2px 16px;
+}
+.modal-footer {
+    padding: 2px 16px;
+}
